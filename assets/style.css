@@ -1,0 +1,425 @@
+/* ============================================================
+   PRONAF Verde — assets/style.css
+   O Dash carrega automaticamente tudo em assets/
+   ============================================================ */
+
+/* ── IMPORTS DE FONTE (alternativa ao external_stylesheets) ─ */
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap');
+
+/* ── VARIÁVEIS GLOBAIS ──────────────────────────────────────── */
+:root {
+    --verde:       #16a34a;
+    --verde-light: #dcfce7;
+    --verde-dark:  #14532d;
+    --cinza-900:   #0f172a;
+    --cinza-700:   #334155;
+    --cinza-400:   #94a3b8;
+    --cinza-100:   #f1f5f9;
+    --cinza-50:    #f8fafc;
+    --branco:      #ffffff;
+    --perigo:      #dc2626;
+    --info:        #0369a1;
+    --amarelo:     #d97706;
+    --radius:      12px;
+    --radius-lg:   20px;
+    --sombra:      0 4px 24px rgba(15,23,42,0.08);
+    --sombra-lg:   0 8px 40px rgba(15,23,42,0.12);
+}
+
+* { box-sizing: border-box; }
+
+body {
+    background: var(--cinza-50);
+    font-family: 'DM Sans', sans-serif;
+    color: var(--cinza-900);
+    min-height: 100vh;
+}
+
+/* ── HEADER ─────────────────────────────────────────────────── */
+.header-wrap {
+    background: var(--cinza-900);
+    padding: 0;
+    position: relative;
+    overflow: hidden;
+}
+.header-wrap::before {
+    content: '';
+    position: absolute;
+    top: -60px; right: -80px;
+    width: 320px; height: 320px;
+    background: radial-gradient(circle, rgba(22,163,74,0.18) 0%, transparent 70%);
+    pointer-events: none;
+}
+.header-inner {
+    padding: 28px 40px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+.header-logo-mark {
+    width: 42px; height: 42px;
+    background: var(--verde);
+    border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 22px;
+    flex-shrink: 0;
+}
+.header-title {
+    font-family: 'Syne', sans-serif;
+    font-size: 22px;
+    font-weight: 800;
+    color: var(--branco);
+    margin: 0;
+    letter-spacing: -0.3px;
+}
+.header-subtitle {
+    font-size: 12.5px;
+    color: var(--cinza-400);
+    margin: 0;
+    font-weight: 400;
+    letter-spacing: 0.3px;
+    text-transform: uppercase;
+}
+.header-badge {
+    background: rgba(22,163,74,0.15);
+    border: 1px solid rgba(22,163,74,0.35);
+    color: #4ade80;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+    padding: 5px 12px;
+    border-radius: 100px;
+}
+
+/* ── CARDS ──────────────────────────────────────────────────── */
+.card-pronaf {
+    background: var(--branco);
+    border: 1px solid #e2e8f0;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--sombra);
+    overflow: hidden;
+}
+.card-header-pronaf {
+    background: var(--cinza-50);
+    border-bottom: 1px solid #e2e8f0;
+    padding: 14px 22px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.card-header-icon {
+    width: 28px; height: 28px;
+    background: var(--verde-light);
+    border-radius: 7px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 14px;
+}
+.card-header-title {
+    font-family: 'Syne', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--cinza-700);
+    letter-spacing: 0.4px;
+    text-transform: uppercase;
+    margin: 0;
+}
+.card-body-pronaf {
+    padding: 24px;
+}
+
+/* ── FORMULÁRIO ─────────────────────────────────────────────── */
+.input-label {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--cinza-400);
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
+    margin-bottom: 6px;
+    display: block;
+}
+.input-car {
+    width: 100%;
+    padding: 11px 16px;
+    border: 1.5px solid #e2e8f0;
+    border-radius: var(--radius);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 15px;
+    color: var(--cinza-900);
+    background: var(--branco);
+    transition: border-color 0.2s, box-shadow 0.2s;
+    outline: none;
+}
+.input-car:focus {
+    border-color: var(--verde);
+    box-shadow: 0 0 0 3px rgba(22,163,74,0.12);
+}
+.btn-analisar {
+    width: 100%;
+    padding: 13px 24px;
+    background: var(--verde);
+    color: var(--branco);
+    border: none;
+    border-radius: var(--radius);
+    font-family: 'Syne', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.1s, box-shadow 0.2s;
+    box-shadow: 0 2px 12px rgba(22,163,74,0.30);
+    margin-top: 14px;
+}
+.btn-analisar:hover {
+    background: #15803d;
+    box-shadow: 0 4px 18px rgba(22,163,74,0.38);
+    transform: translateY(-1px);
+}
+.btn-analisar:active {
+    transform: translateY(0);
+}
+
+/* ── ESTADO VAZIO ───────────────────────────────────────────── */
+.estado-vazio {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+    text-align: center;
+    color: var(--cinza-400);
+}
+.estado-vazio-icon {
+    font-size: 40px;
+    margin-bottom: 12px;
+    opacity: 0.5;
+}
+.estado-vazio p {
+    font-size: 13.5px;
+    line-height: 1.6;
+    max-width: 240px;
+    margin: 0;
+}
+
+/* ── BADGE DE RESULTADO ─────────────────────────────────────── */
+.resultado-badge {
+    border-radius: var(--radius);
+    padding: 18px 22px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 20px;
+}
+.resultado-badge-icon {
+    font-size: 28px;
+    flex-shrink: 0;
+}
+.resultado-badge-nome {
+    font-family: 'Syne', sans-serif;
+    font-size: 16px;
+    font-weight: 800;
+    letter-spacing: -0.2px;
+    margin: 0 0 2px 0;
+}
+.resultado-badge-sub {
+    font-size: 12.5px;
+    opacity: 0.75;
+    margin: 0;
+    font-weight: 400;
+}
+
+/* ── MÉTRICAS ───────────────────────────────────────────────── */
+.metricas-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin-bottom: 20px;
+}
+.metrica-item {
+    background: var(--cinza-50);
+    border: 1px solid #e2e8f0;
+    border-radius: var(--radius);
+    padding: 14px 12px;
+    text-align: center;
+}
+.metrica-label {
+    font-size: 10.5px;
+    font-weight: 600;
+    color: var(--cinza-400);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 5px;
+}
+.metrica-valor {
+    font-family: 'Syne', sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    margin: 0;
+}
+.metrica-valor.verde   { color: var(--verde); }
+.metrica-valor.amarelo { color: var(--amarelo); }
+.metrica-valor.azul    { color: var(--info); }
+
+/* ── SEÇÃO METADADOS ────────────────────────────────────────── */
+.secao-titulo {
+    font-family: 'Syne', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--cinza-400);
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    margin: 0 0 10px 0;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #e2e8f0;
+}
+.metadados-lista {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+.metadado-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    font-size: 13px;
+    padding: 4px 0;
+    border-bottom: 1px dashed #f1f5f9;
+}
+.metadado-chave {
+    color: var(--cinza-400);
+    font-weight: 400;
+    flex-shrink: 0;
+    padding-right: 12px;
+}
+.metadado-valor {
+    color: var(--cinza-900);
+    font-weight: 500;
+    text-align: right;
+}
+.metadado-valor.destaque { color: var(--verde);  font-weight: 600; }
+.metadado-valor.alerta   { color: var(--perigo); font-weight: 600; }
+
+/* ── BARRA DE CONFIANÇA ─────────────────────────────────────── */
+.confianca-wrap { margin-bottom: 20px; }
+.confianca-header {
+    display: flex;
+    justify-content: space-between;
+    font-size: 11.5px;
+    color: var(--cinza-400);
+    margin-bottom: 6px;
+}
+.confianca-bar-bg {
+    height: 6px;
+    background: #e2e8f0;
+    border-radius: 100px;
+    overflow: hidden;
+}
+.confianca-bar-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--verde), #4ade80);
+    border-radius: 100px;
+    transition: width 0.8s ease;
+}
+
+/* ── ALERTA DE BLOQUEIO ─────────────────────────────────────── */
+.bloqueio-wrap {
+    background: #fef2f2;
+    border: 1.5px solid #fecaca;
+    border-radius: var(--radius-lg);
+    padding: 24px;
+}
+.bloqueio-titulo {
+    font-family: 'Syne', sans-serif;
+    font-size: 15px;
+    font-weight: 800;
+    color: var(--perigo);
+    margin: 0 0 4px 0;
+}
+.bloqueio-sub {
+    font-size: 12.5px;
+    color: #ef4444;
+    margin: 0 0 18px 0;
+}
+.bloqueio-nota {
+    background: #fee2e2;
+    border-radius: 8px;
+    padding: 12px 14px;
+    font-size: 12px;
+    color: #7f1d1d;
+    line-height: 1.6;
+    margin-top: 14px;
+}
+
+/* ── TABELA COMPARATIVA BIOFÍSICA ───────────────────────────── */
+.tabela-wrap {
+    overflow-x: auto;
+    margin-bottom: 4px;
+}
+.tabela-biofisica {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+}
+.tabela-biofisica .tr-header th {
+    font-family: 'Syne', sans-serif;
+    font-size: 10.5px;
+    font-weight: 700;
+    color: var(--cinza-400);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    padding: 0 10px 8px 10px;
+    text-align: right;
+    border-bottom: 1px solid #e2e8f0;
+}
+.tabela-biofisica .tr-header th:first-child {
+    text-align: left;
+}
+.tabela-biofisica tr td {
+    padding: 9px 10px;
+    border-bottom: 1px dashed #f1f5f9;
+    text-align: right;
+    vertical-align: middle;
+}
+.tabela-biofisica tr:last-child td {
+    border-bottom: none;
+}
+.td-indicador {
+    text-align: left !important;
+    font-weight: 500;
+    color: var(--cinza-700);
+}
+.td-valor {
+    font-family: 'Syne', sans-serif;
+    font-weight: 600;
+}
+.td-valor.verde   { color: var(--verde); }
+.td-valor.amarelo { color: var(--amarelo); }
+.td-valor.azul    { color: var(--info); }
+
+.td-var {
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
+    border-radius: 6px;
+    padding: 4px 10px !important;
+}
+.var-positivo {
+    color: var(--verde);
+    background: var(--verde-light);
+}
+.var-negativo {
+    color: var(--perigo);
+    background: #fef2f2;
+}
+.var-neutro {
+    color: var(--cinza-400);
+    background: var(--cinza-100);
+}
+
+/* ── RESPONSIVO ─────────────────────────────────────────────── */
+@media (max-width: 768px) {
+    .header-inner        { padding: 20px; }
+    .card-body-pronaf    { padding: 18px; }
+    .metricas-grid       { grid-template-columns: repeat(3, 1fr); }
+}
