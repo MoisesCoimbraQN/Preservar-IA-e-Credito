@@ -21,7 +21,7 @@ def criar_layout() -> html.Div:
                     children=[
                         html.Div("🌿", className="header-logo-mark"),
                         html.Div([
-                            html.H1("Preservar IA e Crédito", className="header-title"),
+                            html.H1("Preservar IA e Crédito Familiar Sustentável", className="header-title"),
                             html.P(
                                 "Global Solution · ASG e o Crédito da Agricultura Familiar",
                                 className="header-subtitle",
@@ -56,21 +56,21 @@ def criar_layout() -> html.Div:
 
                 ], className="g-4"),
                 
+                html.Br(),
+                
                 # ── [MANUAL ESG DE INSTRUÇÕES NO RODAPÉ] ──────────────────
-                html.Hr(style={"marginTop": "50px", "marginBottom": "30px", "color": "#ccc"}),
-
                 html.Div(
                     className="container mb-5",
-                    style={"maxWidth": "1140px", "padding": "0"},
+                    style={"maxWidth": "1140px", "padding": "0", "marginTop": "30px"},
                     children=[
                         html.H5(
                             "📘 Manual de Instruções & Critérios de Elegibilidade (Preservar IA)", 
                             style={"color": "#4B5563", "fontWeight": "bold", "marginBottom": "15px"}
                         ),
                         html.P(
-                            "Esta plataforma utiliza inteligência geoespacial automatizada (Google Earth Engine e satélite NASA Hansen) "
-                            "combinada com um classificador de Machine Learning XGBoost para determinar as alçadas de crédito do FIDC ESG. "
-                            "A precificação e a elegibilidade dos imóveis rurais seguem critérios rígidos de governança ambiental e social:",
+                            "Esta plataforma utiliza inteligência geoespacial automatizada (Google Earth Engine e satélites ESA/Dynamic World) "
+                            "combinada com um classificador de Machine Learning XGBoost de 16 variáveis para determinar as alçadas de crédito do FIDC ESG. "
+                            "A precificação avalia a transição tridimensional real do solo entre as safras de 2016 e 2023:",
                             style={"color": "#6B7280", "fontSize": "14px", "textAlign": "justify"}
                         ),
                         
@@ -83,11 +83,11 @@ def criar_layout() -> html.Div:
                                         "border": "1px solid #bbf7d0", "borderRadius": "8px", "height": "100%"
                                     },
                                     children=[
-                                        html.H6("🏆 CLASSE OURO (Bônus Máximo)", style={"color": "#16a34a", "fontWeight": "bold"}),
+                                        html.H6("🏆 CLASSE OURO (Bônus Verde)", style={"color": "#16a34a", "fontWeight": "bold"}),
                                         html.Small([
-                                            html.Strong("Critério: "), "Desmatamento Zero (var_floresta_pct == 0.0) E uso da terra em total conformidade legal.",
+                                            html.Strong("Critério: "), "Queda de pastagens ativas com floresta intacta, ou expansão de lavouras sobre áreas abertas no Cerrado/Caatinga/Pampa/Pantanal.",
                                             html.Br(), html.Br(),
-                                            "Destinado aos produtores familiares que atuam como verdadeiros guardiões da floresta, mantendo o ecossistema intacto. Garante acesso às menores taxas de juros do fundo climático."
+                                            "Premia produtores que promovem a transição ecológica e a agricultura de baixo carbono. Concede desconto de -0.5% a.a. nos juros climáticos."
                                         ], style={"color": "#14532d", "fontSize": "13px"})
                                     ]
                                 )
@@ -103,9 +103,9 @@ def criar_layout() -> html.Div:
                                     children=[
                                         html.H6("✅ CLASSE REGULAR (Taxa Padrão)", style={"color": "#0369a1", "fontWeight": "bold"}),
                                         html.Small([
-                                            html.Strong("Critério: "), "Uso da terra dentro do limite do bioma, mas com supressão florestal histórica ou permitida (≤ 20%).",
+                                            html.Strong("Critério: "), "Estabilidade absoluta das classes desde 2016, regeneração compensada ou Integração Lavoura-Pecuária (ILP) proporcional.",
                                             html.Br(), html.Br(),
-                                            "Aplica-se ao produtor regular que cumpre o Código Florestal e respeita a Reserva Legal, mas registrou alguma alteração na cobertura vegetal dentro das janelas permitidas."
+                                            "Destinado ao produtor em conformidade básica que mantém seu uso tradicional estável ou adota manejo equilibrado. Acesso às taxas convencionais do Plano Safra."
                                         ], style={"color": "#0c4a6e", "fontSize": "13px"})
                                     ]
                                 )
@@ -119,18 +119,17 @@ def criar_layout() -> html.Div:
                                         "border": "1px solid #fecaca", "borderRadius": "8px", "height": "100%"
                                     },
                                     children=[
-                                        html.H6("🚨 CLASSE CRÍTICA (Bloqueio/Risco)", style={"color": "#dc2626", "fontWeight": "bold"}),
+                                        html.H6("🚨 CLASSE CRÍTICA (Bloqueio ESG)", style={"color": "#dc2626", "fontWeight": "bold"}),
                                         html.Small([
-                                            html.Strong("Critério: "), "Desmatamento agressivo (> 20.0% da área) OU estouro do teto de uso permitido no Bioma.",
+                                            html.Strong("Critério: "), "Desmatamento severo (>15%) ou avanço pecuário agressivo (>20%) com supressão de vegetação nativa (tolerância de 5% para ruídos).",
                                             html.Br(), html.Br(),
-                                            "Imóveis rurais com inconformidades graves enfrentam o bloqueio da operação ou a aplicação da taxa de mercado cheia devido ao alto risco de compliance e passivo socioambient."
+                                            "Bloqueio automático imediato do pleito de crédito rural na esteira de compliance devido ao alto risco de passivo socioambiental e descumprimento legal."
                                         ], style={"color": "#7f1d1d", "fontSize": "13px"})
                                     ]
                                 )
                             ]),
                         ], className="g-3 mt-2"),
 
-                        # Rodapé de limites dinâmicos por bioma
                         html.Div(
                             style={
                                 "marginTop": "20px", "padding": "12px", 
@@ -138,27 +137,27 @@ def criar_layout() -> html.Div:
                             },
                             children=[
                                 html.Small([
-                                    html.Strong("📌 Tetos de Uso Permitido (Código Florestal): "),
-                                    "Bioma Amazônia: Máximo 20% de uso (80% Reserva Legal) | ",
-                                    "Cerrado (Amazônia Legal): Máximo 65% de uso | ",
-                                    "Cerrado e demais biomas nacionais: Máximo 80% de uso. ",
+                                    html.Strong("📌 Matriz Legal de Biomas (Código Florestal): "),
+                                    "Bioma Amazônia: Limite estrito de 20% de área convertida (80% Reserva Legal) | ",
+                                    "Cerrado (Amazônia Legal): Limite de 65% de conversão | ",
+                                    "Cerrado e demais biomas: Limite de até 80% de conversão permitida. ",
                                     html.Br(),
-                                    html.Strong("⚠️ Trava de Porte Familiar: "),
-                                    "Imóveis que ultrapassarem o limite regional de 4 Módulos Fiscais (INCRA) são desqualificados automaticamente na esteira de Governança (G)."
+                                    html.Strong("⚠️ Hard-Block de Porte Familiar: "),
+                                    "Imóveis rurais cuja área total ultrapassar o limite municipal de 4 Módulos Fiscais (INCRA) são desclassificados automaticamente na esteira fundiária de Governança (G)."
                                 ], style={"color": "#4B5563", "fontSize": "12px"})
                             ]
                         )
                     ]
-                ),
-            ],
-        ),
+                )
+            ]
+        )
     ])
 
 
 # ── Blocos internos ──────────────────────────────────────────────────────────
 
 def _card_busca() -> html.Div:
-    # Os 8 códigos reais que você separou para a banca testar na lista suspensa
+    # Os 8 códigos reais selecionados para a lista suspensa
     exemplos_car = [
         "MT-5108600-81A4B8AC56604EFEAD1C9CA0DA6A4A51",
         "MT-5108600-81762AC703A349F18A632CF48BD7D6EE",
@@ -178,17 +177,17 @@ def _card_busca() -> html.Div:
         html.Div(className="card-body-pronaf", children=[
             html.Label("Selecione um CAR na lista ou digite um código manualmente", className="input-label"),
             
-            # 🚀 CAMPO DUPLO PERFEITO: Aceita digitação livre completa...
+            # Campo para inserção de dados
             dcc.Input(
                 id="input-car",
                 type="text",
                 className="input-car",
                 placeholder="Clique duas vezes para abrir a lista ou cole um CAR...",
-                list="lista-sugestoes-car",  # Vinculado ao DataList abaixo
+                list="lista-sugestoes-car",
                 style={"width": "100%", "marginBottom": "15px"}
             ),
             
-            # 🛰️ ...e fornece os seus 8 exemplos como uma lista suspensa nativa do navegador!
+            # Lista dinâmica nativa de sugestões
             html.Datalist(
                 id="lista-sugestoes-car",
                 children=[html.Option(value=car) for car in exemplos_car]
