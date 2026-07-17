@@ -76,4 +76,4 @@ A tomada de decisão da inteligência artificial foi dominada pela dinâmica tri
 Link da plataforma: https://preservar-ia-e-credito.onrender.com/
 
 ---
-Desenvolvido como projeto prático para o **Desafio Nuclea - FIAP**.
+Desenvolvido como projeto prático para o **Global Solution - Fiap 1/2026**.
